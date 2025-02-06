@@ -18,6 +18,10 @@
             margin-top: 90px;
             /* border: 2px solid black; */
         }
+
+        .thstyl {
+            border: 1px solid black;
+        }
     </style>
 
 </head>
@@ -113,96 +117,101 @@
 
     <!--**************************************************SignUp form***************************************************************-->
 
-    <div style=" margin-top: 90px;height: 640px; width: 400px; margin-left:35%; border-radius: 40px;"
+    <div style=" margin-top: 90px;height: 700px; width: 400px; margin-left:35%; border-radius: 40px;"
         class="bg-primary">
 
         <h1 class="text-white" style="text-align: center;">Sign Up</h1>
 
-        <form>
+        <form onsubmit="return display(event)">
             <div class="col">
                 <div class="col mb-1">
-                    <input type="text" class="form-control" placeholder="First name">
+
+                    <input type="text" class="form-control" placeholder="First name" id="name" />
+
                 </div>
                 <div class="col mb-1">
-                    <input type="text" class="form-control" placeholder="Last name">
+                    <input type="text" class="form-control" placeholder="Last name" id="lname">
                 </div>
                 <div class="col mb-1">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">@</div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email Address">
+                        <input type="text" class="form-control" id="email" placeholder="Email Address">
                     </div>
                 </div>
                 <div class="col mb-1">
-                    <input type="number" class="form-control" placeholder="Phone Number">
+                    <input type="number" class="form-control"  placeholder="Phone Number" id="ph">
                 </div>
+
+
                 <div class="col mb-1">
-                    <label class="text-white">Gender</label>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                            class="custom-control-input">
-                        <label class="custom-control-label text-white" for="customRadioInline1">Male</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                            class="custom-control-input">
-                        <label class="custom-control-label text-white" for="customRadioInline2">Female</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline3" name="customRadioInline1"
-                            class="custom-control-input">
-                        <label class="custom-control-label text-white" for="customRadioInline3">Other</label>
-                    </div>
+                    <label class="text-white">Gender :</label><br />
+
+                    <label>
+                        <input type="radio" name="gender" value="male" />Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="female" />Female
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="other" />Other
+                    </label>
                 </div>
+
+
+
                 <div class="col mb-1">
-                    <select class="custom-select">
-                        <option selected>Country</option>
-                        <option value="1">India</option>
-                        <option value="2">USA</option>
-                        <option value="3">UAE</option>
-                        <option value="3">UK</option>
-                        <option value="3">CANADA</option>
-                        <option value="3">AUSTRELIA</option>
-                        <option value="3">SAUDI</option>
+                    <select class="custom-select" id="country" type="text">
+                        <option value="">Country</option>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UAE</option>
+                        <option>UK</option>
+                        <option>CANADA</option>
+                        <option>AUSTRELIA</option>
+                        <option>SAUDI</option>
                     </select>
                 </div>
                 <div class="col mb-1">
-                    <select class="custom-select">
-                        <option selected>State</option>
-                        <option value="1">GOA</option>
-                        <option value="2">MH</option>
-                        <option value="3">RJ</option>
-                        <option value="3">GUJ</option>
-                        <option value="3">PB</option>
-                        <option value="3">MP</option>
-                        <option value="3">UP</option>
+                    <select class="custom-select" id="state">
+                        <option selected value="">State</option>
+                        <option>GOA</option>
+                        <option>MH</option>
+                        <option>RJ</option>
+                        <option>GUJ</option>
+                        <option>PB</option>
+                        <option>MP</option>
+                        <option>UP</option>
                     </select>
                 </div>
                 <div class="col mb-1">
-                    <select class="custom-select">
-                        <option selected>District</option>
-                        <option value="1">PUNE</option>
-                        <option value="2">MUMBAI</option>
-                        <option value="3">LATUR</option>
-                        <option value="3">VADODARA</option>
-                        <option value="3">NANDED</option>
-                        <option value="3">HYDRABAD</option>
-                        <option value="3">NASHIK</option>
+                    <select class="custom-select" id="dist">
+                        <option selected value="">District</option>
+                        <option>PUNE</option>
+                        <option>MUMBAI</option>
+                        <option>LATUR</option>
+                        <option>VADODARA</option>
+                        <option>NANDED</option>
+                        <option>HYDRABAD</option>
+                        <option>NASHIK</option>
                     </select>
                 </div>
                 <div class="col mb-1">
 
                     <div class="custom-control custom-radio custom-control-inline">
                         <label class="text-white mr-1">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <input type="text" class="form-control" id="zip">
+
                     </div>
                 </div>
 
                 <div class="col mb-1">
 
                     <div class="custom-control custom-radio custom-control-inline" style="width: 300px;">
-                        <textarea placeholder="Enter Detailed Address" style="width: 400px;"></textarea>
+                        <textarea placeholder="Enter Detailed Address" style="width: 400px;" id="add"></textarea>
                     </div>
                 </div>
                 <div class="col mb-1">
@@ -210,30 +219,107 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">@</div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                        <input type="text" class="form-control" id="uname" autocomplete="username" required placeholder="Username">
                     </div>
                 </div>
                 <div class="col mb-1">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="password" autocomplete="current-password" required class="form-control" id="pass" placeholder="Password">
                 </div>
                 <div class="col mt-4" style="margin-left: 25%;">
                     <button class="btn btn-success mr-3">Submit</button><button class="btn btn-danger">Reset</button>
-
                 </div>
             </div>
         </form>
-
-
-
-
-
-
-
-
-
+    </div>
+    <div>
+        <h3>
+            <p id="msg"></p>
+        </h3>
+        <hr />
     </div>
 
+    <div>
+        <table style="border: 2px solid black" id="table">
+            <tr>
+                <th class="thstyl">Name </td>
 
+                <th class="thstyl">Last Name</td>
+                <th class="thstyl">Email</th>
+                <th class="thstyl">Phone</th>
+                <th class="thstyl">Gender</th>
+                <th class="thstyl">Country</th>
+                <th class="thstyl">State</th>
+                <th class="thstyl">District</th>
+                <th class="thstyl">Zip</th>
+                <th class="thstyl">Address</th>
+                <th class="thstyl">Uname</th>
+                <th class="thstyl">Password</th>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <script>
+
+        let arr = [];
+        function display(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let lname = document.getElementById("lname").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("ph").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            let country = document.getElementById("country").value;
+            let state = document.getElementById("state").value;
+            let dist = document.getElementById("dist").value;
+            let zip = document.getElementById("zip").value;
+            let add = document.getElementById("add").value;
+            let uname = document.getElementById("uname").value;
+            let pass = document.getElementById("pass").value;
+
+
+            if(name=="" || lname=="" || email=="" || phone=="" ||country=="" || state==""|| dist==""|| zip==""|| add=="" )  {  
+            alert("Please Fill the all fields in form.")
+
+             }else{
+           
+
+            let obj = { name, lname, email, phone, gender, country, state, dist, zip, add, uname, pass };
+            tempview(obj);
+
+
+            function tempview(obj) {
+                let table = document.getElementById("table");
+                let newRow = table.insertRow(-1);
+
+                newRow.innerHTML = `
+        <td class="thstyl">${obj.name}</td>
+        <td class="thstyl">${obj.lname}</td>
+        <td class="thstyl">${obj.email}</td>
+        <td class="thstyl">${obj.phone}</td>
+        <td class="thstyl">${obj.gender.value}</td>
+        <td class="thstyl">${obj.country}</td>
+        <td class="thstyl">${obj.state}</td>
+        <td class="thstyl">${obj.dist}</td>
+        <td class="thstyl">${obj.zip}</td>
+        <td class="thstyl">${obj.add}</td>
+        <td class="thstyl">${obj.uname}</td>
+        <td class="thstyl">${obj.pass}</td>
+    `;
+            }
+        }
+    }
+
+
+
+
+
+
+
+    </script>
 
 
 
